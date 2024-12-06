@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT423RileyLove</title>
+    <style>
+        /* Basic styling for body with gradient background */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            background: linear-gradient(to right, #f0f8ff, #a8c0ff); /* Gradient from light blue to soft purple */
+            color: #333; /* Dark text for readability */
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50; /* Darker shade for the sidebar */
+            color: white;
+            padding-top: 20px;
+            height: 100vh;
+            position: fixed;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            color: white;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #34495e;
+        }
+
+        .dropdown-btn {
+            padding: 15px;
+            border: none;
+            background: none;
+            color: white;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold; /* Make dropdown button labels bold */
+        }
+
+        /* Main content area */
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: calc(100% - 250px);
+        }
+
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            margin: 20px 0;
+            border: 5px solid #fff;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* Styling for "Show More" link */
+        .show-more {
+            padding: 15px;
+            color: white;
+            background-color: #34495e;
+            cursor: pointer;
+            text-align: center;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .show-more:hover {
+            background-color: #2c3e50;
+        }
+
+        .extra-projects {
+            display: none;
+        }
+
+        /* Projects section styling */
+        .projects-header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #34495e;
+        }
+
+        .project-list {
+            padding-left: 20px;
+        }
+
+        .project-list a {
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+            display: block;
+            border-bottom: 1px solid #34495e;
+        }
+
+        .project-list a:hover {
+            background-color: #34495e;
+        }
+
+        /* Document links section */
+        .document-section {
+            margin-top: 30px;
+        }
+
+        .document-section a {
+            color: #2c3e50;
+            text-decoration: none;
+        }
+
+        .document-section a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+
+    <script>
+        // Function to toggle visibility of dropdown menus
+        function toggleDropdown(section) {
+            const content = document.getElementById(section);
+            const icon = document.getElementById(section + "-icon");
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                icon.textContent = "▼"; // Down arrow when closed
+            } else {
+                content.style.display = "block";
+                icon.textContent = "▲"; // Up arrow when open
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2 style="text-align: center;">My Portfolio</h2>
+
+        <!-- Dropdown for Technical Documents -->
+        <button class="dropdown-btn" onclick="toggleDropdown('techdocs')">
+            <strong>Technical Documents</strong> <span id="techdocs-icon">▼</span>
+        </button>
+        <div id="techdocs" style="display:none;">
+            <a href="Project 2 Final Report.pdf" target="_blank"> The solution to lack of communication through MaryNet</a>
+            <a href="loanInstallmentPlan.pdf" target="_blank">Loan Installment Calculator</a>
+            <a href="Final Project Report.pdf" target="_blank"> Database Project</a>
+            <a href="HashT.pdf" target="_blank">Hash Table code</a>
+        </div>
+
+        <!-- Dropdown for Soft Skills -->
+        <button class="dropdown-btn" onclick="toggleDropdown('softskills')">
+            <strong>Soft Skills (EI/EQ)</strong> <span id="softskills-icon">▼</span>
+        </button>
+        <div id="softskills" style="display:none;">
+            <a href="https://marymountsaints.com/sports/womens-lacrosse/roster/riley-love/4767" target="_blank">Marymount Lacrosse</a>
+            <a href="Project 2 Final Report IT355.pdf" target="_blank">Testing the Functionality of Facebook’s Software Report</a>
+            <a href="Hand Hygiene for School Aged Children NU234.pdf" target="_blank">Hand Hygiene for School Aged Children Presentation 3</a>
+        </div>
+
+        <!-- Dropdown for Extracurriculars -->
+        <button class="dropdown-btn" onclick="toggleDropdown('extracurriculars')">
+            <strong>Extracurriculars</strong> <span id="extracurriculars-icon">▼</span>
+        </button>
+        <div id="extracurriculars" style="display:none;">
+            <a href="Final BodySwaps Report IT345.pdf" target="_blank">VR Project </a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1 id="introduction">Welcome to My Portfolio</h1>
+        <img src="rileysWebPage.jpg" class="profile-image">
+        <p>Hello! I’m Riley Love, I am an IT major from Marymount University. Welcome to my portfolio where I showcase some of the projects I’ve worked on throughout my time at MU. Feel free to explore the sidebar for a list of my projects! If you would like to learn more about me or get in contact, please reach out through my 
+            <a href="https://www.linkedin.com/in/riley-love-4696a6192?trk=people-guest_people_search-card" target="_blank" style="color: #2c3e50; text-decoration: underline;">LinkedIn</a>.
+        </p>
+    </div>
+</body>
+</html>
+
+
+
